@@ -1,0 +1,3 @@
+Creating fathomless-basin-9044... done, stack is cedar
+http://fathomless-basin-9044.herokuapp.com/ | git@heroku.com:fathomless-basin-9044.git
+Git remote heroku added

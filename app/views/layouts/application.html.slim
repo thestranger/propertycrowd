@@ -27,11 +27,12 @@ html lang="#{I18n.locale}" xmlns:fb="http://ogp.me/ns/fb#"
     = render 'layouts/locales'
 
     = render 'layouts/header'
-    = render 'layouts/recommended_header' if request.path == root_path
-    #main_content[data-controller-class=controller.class.name.downcase data-controller-name=controller.controller_name.downcase data-action=controller.action_name.downcase data-locale="#{I18n.locale}" data-user="#{current_user.to_json}"]
+<!--    = render 'layouts/recommended_header' if request.path == root_path -->
+    = render 'layouts/propervest_header'
+    #main_content[data-controller-class=controller.class.name.downcase data-controller-name=controller.controller_name.downcase data-action=controller.action_name.downcase data-locale="#{I18n.locale}" data-user="#{current_user.to_json}"] 
       =yield
-    = yield :partners
-    = yield :crowdmap
+<!--    = yield :partners -->
+<!--    = yield :crowdmap -->
     #footer
       .container.footer
         .content
@@ -73,7 +74,7 @@ html lang="#{I18n.locale}" xmlns:fb="http://ogp.me/ns/fb#"
 
           /.social
             h3= t('footer.titles.social')
-            .twitter
+           .twitter-follow-button
               = link_to "Follow @#{t('site.twitter')}", "http://twitter.com/#{t('site.twitter')}", :class => 'twitter-follow-button', :"data-button"=>"blue", :"data-text-color" => "#ffffff", :"data-link-color"=>"#fffffff", :"data-width" => "224px"
             .facebook
               .fb-like data-href="http://facebook.com/crowdplaces" data-send="false" data-width="171" data-show-faces="true"
@@ -82,6 +83,7 @@ html lang="#{I18n.locale}" xmlns:fb="http://ogp.me/ns/fb#"
               = text_field_tag 'EMAIL', nil, placeholder: 'email@email.com', label: 'email'
               = submit_tag 'assinar'
           .clearfix
+
     /#logos_container
       #logos
         /.multide

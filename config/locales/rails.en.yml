@@ -2,7 +2,7 @@ en:
   number:
     currency:
       format:
-        unit: "CLP $"
+        unit: "USD $"
         precision: 0
         delimiter: "."
   time:

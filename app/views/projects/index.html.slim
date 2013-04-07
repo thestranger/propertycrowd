@@ -9,14 +9,16 @@
   meta property="fb:admins" content="#{fb_admins}"
 
 <!-- = render :partial => 'recommended_header' -->
+= render 'layouts/propervest_header'
 #page_content
   .container
     .main
-      .selected_projects.list
-        .list_title
+      p More information about why people should use our website.
+      /.selected_projects.list
+        /.list_title
           .title
             h2= t('sections.selection.title')
-        .projects
+        /.projects
           = render :partial => 'project', :locals => {:project => @first_project, :custom_class => 'first' } if @first_project
           = render :partial => 'project', :locals => {:project => @second_project } if @second_project
           = render :partial => 'project', :locals => {:project => @third_project, :custom_class => 'last' } if @third_project
@@ -48,7 +50,7 @@
             hr
             = link_to t('main.links.recents'), explore_path()+'#recent'
 
-    .sidebar
+    /.sidebar
       .content
         /.blog
           h3= t('sidebar.titles.blog')
@@ -63,10 +65,10 @@
                 = link_to post.url, target: '__blank', class: 'resume' do
                   = truncate(post.summary, length: 130)
 
-        .facebook
+        /.facebook
           h3= t('sidebar.titles.facebook')
           .fb-like data-href="#{t('site.facebook').html_safe}" data-send="false" data-width="171" data-show-faces="true"
-        .twitter
+        /.twitter
           h3= t('sidebar.titles.twitter')
           - @last_tweets.each do |tweet|
             p= tweet['text']

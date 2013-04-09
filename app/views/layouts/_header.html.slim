@@ -9,7 +9,7 @@
        / = submit_tag
     nav.menu
       /= link_to t('layouts.header.blog'), t('site.blog'), target: :_blank
-      = link_to t('layouts.header.help'), faq_path
+      = link_to t('layouts.header.help'), guidelines_path
       - if current_user
         = link_to '#', class: 'my_profile_link' do
           = image_tag(current_user.display_image, :size => "20x20", :class => 'profile_picture')
